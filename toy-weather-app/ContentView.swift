@@ -12,10 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            BackgroundGradientView(
-                topColor: isNightMode ? .black : .blue,
-                bottomColor: isNightMode ? .gray : Color("mint")
-            )
+            BackgroundGradientView(isNightMode: isNightMode)
             
             VStack {
                 CityTextView(cityName: "Chicago, IL")
@@ -33,19 +30,26 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                // TODO extract out, use @Binding for state
-                Button {
-                    isNightMode.toggle()
-                } label: {
-                    WeatherButtonContent(
-                        label: "Toggle Night Mode",
-                        textColor: .blue,
-                        backgroundColor: .white
-                    )
-                }
+                WeatherButton(isNightMode: $isNightMode)
                 
                 Spacer()
             }
+        }
+    }
+}
+
+struct WeatherButton: View {
+    @Binding var isNightMode: Bool
+    
+    var body: some View {
+        Button {
+            isNightMode.toggle()
+        } label: {
+            WeatherButtonContent(
+                label: "Toggle Night Mode",
+                textColor: .blue,
+                backgroundColor: .white
+            )
         }
     }
 }
@@ -89,8 +93,15 @@ struct CityTextView: View {
 }
 
 struct BackgroundGradientView: View {
-    var topColor: Color
-    var bottomColor: Color
+    var isNightMode: Bool
+    
+    var topColor: Color {
+        return isNightMode ? .black : .blue
+    }
+    
+    var bottomColor: Color {
+        return isNightMode ? .gray : Color("mint")
+    }
     
     var body: some View {
         LinearGradient(
