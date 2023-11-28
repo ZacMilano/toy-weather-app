@@ -16,6 +16,14 @@ struct ContentView: View {
                 endPoint: .bottom
             )
             .ignoresSafeArea()
+            
+            VStack {
+                Text("Chicago, IL")
+                    .font(.system(size: 32, weight: .medium, design: .default))
+                    .foregroundColor(.white)
+                    .padding()
+                Spacer()
+            }
         }
     }
 }
