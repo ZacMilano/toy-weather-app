@@ -20,6 +20,7 @@ struct ContentView: View {
             VStack {
                 CityTextView(cityName: "Chicago, IL")
                 
+                // TODO update icon on night mode change
                 MainWeatherStatusView(imageName: "cloud.snow.fill", temperature: 30)
                 
                 HStack(spacing: 20) {
@@ -32,6 +33,7 @@ struct ContentView: View {
                 
                 Spacer()
                 
+                // TODO extract out, use @Binding for state
                 Button {
                     isNightMode.toggle()
                 } label: {
