@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isNightMode = false
+    
     var body: some View {
         ZStack {
-            BackgroundGradientView(topColor: .blue, bottomColor: Color("mint"))
+            BackgroundGradientView(
+                topColor: isNightMode ? .black : .blue,
+                bottomColor: isNightMode ? .gray : Color("mint")
+            )
             
             VStack {
                 CityTextView(cityName: "Chicago, IL")
@@ -23,6 +28,18 @@ struct ContentView: View {
                     WeatherDayView(day: "THU", imageName: "sun.haze.fill", temperature: 37)
                     WeatherDayView(day: "FRI", imageName: "sun.haze.fill", temperature: 21)
                     WeatherDayView(day: "SAT", imageName: "sun.haze.fill", temperature: 11)
+                }
+                
+                Spacer()
+                
+                Button {
+                    isNightMode.toggle()
+                } label: {
+                    WeatherButtonContent(
+                        label: "Toggle Night Mode",
+                        textColor: .blue,
+                        backgroundColor: .white
+                    )
                 }
                 
                 Spacer()
@@ -80,5 +97,20 @@ struct BackgroundGradientView: View {
             endPoint: .bottom
         )
         .ignoresSafeArea()
+    }
+}
+
+struct WeatherButtonContent: View {
+    var label: String
+    var textColor: Color
+    var backgroundColor: Color
+    
+    var body: some View {
+        Text(label)
+            .frame(width: 280, height: 50)
+            .background(backgroundColor)
+            .foregroundColor(textColor)
+            .font(.system(size: 20, weight: .bold, design: .default))
+            .cornerRadius(10)
     }
 }
