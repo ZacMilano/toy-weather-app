@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1123068E2B1570F300F11463 /* WeatherDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1123068D2B1570F300F11463 /* WeatherDayView.swift */; };
 		11409F662B15693B004E2C83 /* toy_weather_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11409F652B15693B004E2C83 /* toy_weather_appApp.swift */; };
 		11409F682B15693B004E2C83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11409F672B15693B004E2C83 /* ContentView.swift */; };
 		11409F6A2B15693C004E2C83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11409F692B15693C004E2C83 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1123068D2B1570F300F11463 /* WeatherDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDayView.swift; sourceTree = "<group>"; };
 		11409F622B15693B004E2C83 /* toy-weather-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "toy-weather-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11409F652B15693B004E2C83 /* toy_weather_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toy_weather_appApp.swift; sourceTree = "<group>"; };
 		11409F672B15693B004E2C83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				11409F652B15693B004E2C83 /* toy_weather_appApp.swift */,
 				11409F672B15693B004E2C83 /* ContentView.swift */,
+				1123068D2B1570F300F11463 /* WeatherDayView.swift */,
 				11409F692B15693C004E2C83 /* Assets.xcassets */,
 				11409F6B2B15693C004E2C83 /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				11409F682B15693B004E2C83 /* ContentView.swift in Sources */,
 				11409F662B15693B004E2C83 /* toy_weather_appApp.swift in Sources */,
+				1123068E2B1570F300F11463 /* WeatherDayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
